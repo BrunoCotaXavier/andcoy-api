@@ -9,15 +9,19 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
         allowNull: false
       },
+      role: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+      },
       rua: {
         type: DataTypes.STRING,
       },
       cep: {
-        type: DataTypes.FLOAT,
-        allowNull: false
+        type: DataTypes.STRING,
+        
       },
       number_home: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: false
       },
       complement: {

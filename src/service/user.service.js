@@ -5,6 +5,7 @@ const createUser = async (data) => {
         const newUser = await db.User.create({
             name: data.name,
             email: data.email,
+            role: data.role,
             rua: data.rua,
             cep: data.cep,
             number_home: data.number_home,
@@ -26,13 +27,30 @@ const getUserByEmail = async (email) => {
         })
         return user;
     } catch (error) {
-        throw new Error('Erro ao procurar usuario por email: '+ error);
+        return ('Erro ao procurar usuario por email: '+ error);
     }
 }
 
-const getAllUsers = async (name) => {
+const getAllUsers = async () => {
     try {
-        const user = await db.User.findAll()
+        const user = await db.User.findAll({
+            where: {
+                role: 1
+            }
+        })
+        return user;
+    } catch (error) {
+        throw new Error('Erro ao listar usuarios: '+ error);
+    }
+}
+
+const getAllEmployes = async () => {
+    try {
+        const user = await db.User.findAll({
+            where: {
+                role: 3
+            }
+        })
         return user;
     } catch (error) {
         throw new Error('Erro ao listar usuarios: '+ error);
@@ -42,5 +60,6 @@ const getAllUsers = async (name) => {
 module.exports = {
     createUser,
     getUserByEmail,
-    getAllUsers
+    getAllUsers,
+    getAllEmployes
 }

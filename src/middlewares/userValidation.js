@@ -3,9 +3,10 @@ const Joi = require('joi');
 const userSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().email().required(),
+  role: Joi.number().required(),
   rua: Joi.string().required(),
-  cep: Joi.number().required(),
-  number_home: Joi.number().required(),
+  cep: Joi.string().required(),
+  number_home: Joi.string().required(),
   complement: Joi.string(),
   password: Joi.string().min(6).required(),
 });

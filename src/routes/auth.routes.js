@@ -16,7 +16,7 @@ route.post('/login', async (req, res) => {
         return res.status(400).json({ message: "Senha incorreta" });
     }
     const token = jwt.sign({ id: User.dataValues.id }, 'DAf3m73*b7HbK4CS.ghOO7sIbVoyFlrk5ElK2ECuuYCJaX1U0SxafYnCp', { expiresIn: '1h' });
-    res.json({ token: token });
+    res.json({ token: token, user: User });
 });
 
 module.exports = route;
