@@ -41,7 +41,7 @@ route.post('/create-checkout-session', cors(), async (req, res) => {
         ],
         allow_promotion_codes: true,
         mode: 'payment',
-        success_url: `${YOUR_DOMAIN}?success=true&cep=${data.cep}&number=${data.number}&complement=${data.complement}`,
+        success_url: `${YOUR_DOMAIN}?success=true&cep=${data.cep}&number=${data.number}&complement=${data.complement}&id=${data.id}`,
         cancel_url: `${YOUR_DOMAIN}/#/produto`,
         payment_intent_data: {
             setup_future_usage: 'on_session',

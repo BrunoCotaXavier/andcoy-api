@@ -67,11 +67,26 @@ const editProduct = async (data) => {
     }
 }
 
+const removeOne = async (data) => {
+    try {
+        const newProduct = await db.Product.findByPk(data.id) 
+        if(newProduct.quantity === 0){
+            return 
+        }
+        newProduct.quantity = parseFloat(newProduct.quantity) - 1
+        newProduct.save()
+        return newProduct;
+    } catch (error) {
+        throw new Error('Erro ao remover um produto: '+ error);
+    }
+}
+
 
 module.exports = {
     createProduct,
     getAllProducts,
     deleteProduct,
     editProduct,
-    getProductById
+    getProductById,
+    removeOne
 }

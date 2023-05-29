@@ -6,7 +6,7 @@ const express = require('express');
 
 const { tokenValidation } = require('../middlewares/tokenValidation');
 const { validateProduct } = require('../middlewares/productValidation')
-const { createProduct, getAllProducts, deleteProduct, editProduct } = require('../service/product.service');
+const { createProduct, getAllProducts, deleteProduct, editProduct, removeOne } = require('../service/product.service');
 
 const route = express.Router();
 
@@ -68,6 +68,14 @@ route.patch('/product', /* tokenValidation, */(req, res) => {
     product.price = req.body.price ? req.body.price : null
     product.quantity = req.body.quantity ? req.body.quantity : null
     editProduct(product)
+        .then(product => res.json(product))
+        .catch(error => res.status(401).json({ message: error.message }))
+});
+
+route.patch('/product/remove', /* tokenValidation, */(req, res) => {
+    const product = {}
+    product.id = req.body.id
+    removeOne(product)
         .then(product => res.json(product))
         .catch(error => res.status(401).json({ message: error.message }))
 });
