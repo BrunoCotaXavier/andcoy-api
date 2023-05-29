@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-route.post('/product', /* tokenValidation, */ upload.fields([{ name: 'imagem' }]) , validateProduct, async (req, res) => {
+route.post('/product', tokenValidation, upload.fields([{ name: 'imagem' }]) , validateProduct, async (req, res) => {
     const product = {
         name: req.body.name,
         description: req.body.description,
@@ -52,7 +52,7 @@ route.get('/product/img/:image', /* tokenValidation, */(req, res) => {
     res.sendFile(imgPath);
 });
 
-route.delete('/product/:id', /* tokenValidation, */(req, res) => {
+route.delete('/product/:id', tokenValidation,(req, res) => {
     const product = {}
     product.id = req.params.id
     deleteProduct(product)
@@ -60,7 +60,7 @@ route.delete('/product/:id', /* tokenValidation, */(req, res) => {
         .catch(error => res.status(401).json({ message: error.message }))
 });
 
-route.patch('/product', /* tokenValidation, */(req, res) => {
+route.patch('/product', tokenValidation,(req, res) => {
     const product = {}
     product.id = req.body.id
     product.name = req.body.name ? req.body.name : null
@@ -72,7 +72,7 @@ route.patch('/product', /* tokenValidation, */(req, res) => {
         .catch(error => res.status(401).json({ message: error.message }))
 });
 
-route.patch('/product/remove', /* tokenValidation, */(req, res) => {
+route.patch('/product/remove', tokenValidation,(req, res) => {
     const product = {}
     product.id = req.body.id
     removeOne(product)

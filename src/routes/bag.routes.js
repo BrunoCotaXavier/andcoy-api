@@ -1,13 +1,13 @@
 const express = require('express');
 
-/* const { tokenValidation } = require('../middlewares/tokenValidation'); */
-/* const { validateProduct } = require('../middlewares/productValidation') */
+const { tokenValidation } = require('../middlewares/tokenValidation');
+const { validateProduct } = require('../middlewares/productValidation')
 
 const { createBag, getBag } = require('../service/bag.service')
 
 const route = express.Router();
 
-route.post('/bag', /* tokenValidation, */ /* validateProduct, */ async (req, res) => {
+route.post('/bag', tokenValidation, validateProduct, async (req, res) => {
     const bag = {
         user: req.body.user,
         products: req.body.products,
@@ -21,7 +21,7 @@ route.post('/bag', /* tokenValidation, */ /* validateProduct, */ async (req, res
         .catch(error => res.status(400).json({ message: error.message }))
 });
 
-route.get('/bag', /* tokenValidation, */ /* validateProduct, */ async (req, res) => {
+route.get('/bag', tokenValidation, validateProduct, async (req, res) => {
     getBag()
         .then(bag => res.json(bag))
         .catch(error => res.status(400).json({ message: error.message }))

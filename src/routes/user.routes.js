@@ -26,13 +26,13 @@ route.post('/users', /* tokenValidation, */ validateUser, async (req, res) => {
         .catch(error => res.status(400).json({ message: error.message }))
 });
 
-route.get('/users/all', /* tokenValidation, */ (req, res) => {
+route.get('/users/all', tokenValidation, (req, res) => {
     getAllUsers()
         .then(user => res.json(user))
         .catch(error => res.status(401).json({ message: error.message }))
 });
 
-route.get('/users/all/employes', /* tokenValidation,  */(req, res) => {
+route.get('/users/all/employes', tokenValidation, (req, res) => {
     getAllEmployes()
         .then(user => res.json(user))
         .catch(error => res.status(401).json({ message: error.message }))
@@ -48,7 +48,7 @@ route.patch('/users/role', tokenValidation, async (req, res) => {
         .catch(error => res.status(401).json({ message: error.message }))
 })
 
-route.patch('/users', /* tokenValidation, */ async (req, res) => {
+route.patch('/users', tokenValidation, async (req, res) => {
     const user = {
         id: req.body.id,
         name: req.body.name,
@@ -63,7 +63,7 @@ route.patch('/users', /* tokenValidation, */ async (req, res) => {
         .catch(error => res.status(401).json({ message: error.message }))
 })
 
-route.delete('/user/:id', /* tokenValidation, */(req, res) => {
+route.delete('/user/:id', tokenValidation,(req, res) => {
     const user = {}
     user.id = req.params.id
     deleteUser(user)

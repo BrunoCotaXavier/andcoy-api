@@ -4,8 +4,8 @@ const { getProductById } = require('../service/product.service');
 const cors = require('cors');
 const path = require('path');
 
-/* const { tokenValidation } = require('../middlewares/tokenValidation'); */
-/* const { validateProduct } = require('../middlewares/productValidation') */
+/* const { tokenValidation } = require('../middlewares/tokenValidation');
+const { validateProduct } = require('../middlewares/productValidation') */
 
 const route = express.Router();
 
