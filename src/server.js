@@ -28,6 +28,6 @@ app.use(etiqueta_routes);
 const port = 8080
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
-        console.log('Servidor rodando na porta 80');
+        console.log('Servidor rodando na porta 8080');
     });
 });

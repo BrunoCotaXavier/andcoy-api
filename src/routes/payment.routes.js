@@ -9,7 +9,7 @@ const path = require('path');
 
 const route = express.Router();
 
-const YOUR_DOMAIN = 'http://localhost:3000';
+const YOUR_DOMAIN = process.env.FRONTEND_URL;
 
 route.post('/create-checkout-session', cors(), async (req, res) => {
     const data = {
