@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.json());
 app.use(timeout('120s'));
 app.use(cors({
-    origin: 'https://andcoy.com'
+    origin: '*'
   }));
 app.use(product_routes);
 app.use(user_routes);
