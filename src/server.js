@@ -19,17 +19,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(timeout('120s'));
 
-app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
+app.all('https://andcoy.com', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://andcoy.com");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 
 const corsOptions = {
-    origin: '*'
+    origin: 'https://andcoy.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    optionsSuccessStatus: 200,
+    credentials: true,
+    preflightContinue: true
 };
-
 app.use(cors(corsOptions));
 app.use(product_routes);
 app.use(user_routes);
