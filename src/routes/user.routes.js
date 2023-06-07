@@ -26,7 +26,7 @@ route.post('/users', /* tokenValidation, */ validateUser, async (req, res) => {
         .catch(error => res.status(400).json({ message: error.message }))
 });
 
-route.get('/users/all', tokenValidation, (req, res) => {
+route.get('/users/all', (req, res) => {
     getAllUsers()
         .then(user => res.json(user))
         .catch(error => res.status(401).json({ message: error.message }))
