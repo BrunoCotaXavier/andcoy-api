@@ -31,7 +31,7 @@ const corsOptions = {
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     preflightContinue: true
-  };
+};
 app.use(cors(corsOptions));
 
 app.use(product_routes);
