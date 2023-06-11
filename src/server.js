@@ -37,9 +37,9 @@ app.use(bag_routes);
 app.use(email_routes);
 app.use(payment_routes);
 app.use(etiqueta_routes);
-const port = 443
+const port = 8080
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
-        console.log('Servidor rodando na porta 8080');
+        console.log(`Servidor rodando na poprta: ${port}`);
     });
 });
