@@ -12,6 +12,7 @@ const bag_routes = require('./routes/bag.routes');
 const email_routes = require('./routes/email.routes');
 const etiqueta_routes = require('./routes/shipping.routes');
 const payment_routes = require('./routes/payment.routes');
+const order_routes = require('./routes/order.routes');
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/public')));
@@ -37,9 +38,11 @@ app.use(bag_routes);
 app.use(email_routes);
 app.use(payment_routes);
 app.use(etiqueta_routes);
+app.use(order_routes);
+
 const port = 8080
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
-        console.log(`Servidor rodando na poprta: ${port}`);
+        console.log(`Servidor rodando na porta: ${port}`);
     });
 });

@@ -72,7 +72,7 @@ route.patch('/product', tokenValidation,(req, res) => {
         .catch(error => res.status(401).json({ message: error.message }))
 });
 
-route.patch('/product/remove', tokenValidation,(req, res) => {
+route.patch('/product/remove', /* tokenValidation, */ (req, res) => {
     const product = {}
     product.id = req.body.id
     removeOne(product)

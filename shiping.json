@@ -1,0 +1,104 @@
+
+/*   /SOLICITA                */
+
+{
+    "pedido": {
+        "numeroCli": "104",
+        "tipo": "D",
+        "vlrMerc": "100",
+        "pesoMerc": 1
+    },
+    "origem":"nome-plataforma",
+    "remetente": {
+        "nome": "andcoy", 
+        "cnpjCpf": "31097659000131",
+        "endereco": {
+            "logradouro": "Av São Miguel",
+            "numero": "8925",
+            "complemento": "Sala 01",
+            "bairro": "São Miguel",
+            "cep": "08070-000",
+            "cidade": "São Paulo",
+            "uf": "SP"
+        },
+        "contato": "andtech.ltda@gmail.com",
+        "email": "andtech.ltda@gmail.com",
+        "celular": "11971643153"
+    },
+    "destinatario": {
+        "nome": "Bruno Cota",
+        "cnpjCpf": "23875307801",
+        "endereco": {
+            "logradouro": "driades",
+            "numero": "180",
+            "complemento": "bloco 5 apt 3",
+            "bairro": "Jardim Casa Pintada3",
+            "cep": "08040460",
+            "cidade": "São Paulo",
+            "uf": "SP"
+        },
+        "contato": "brunocota@hotmail.com.br",
+        "email": "brunocota@hotmail.com.br",
+        "celular": "11998610056"
+    },
+    "produtos": [{
+        "peso": 1,
+        "altura": 10,
+        "largura": 10,
+        "comprimento": 10,
+        "produto": "1 Frasco AndCaoy",
+        "valor": 100.0,
+        "quantidade": 1
+    }],
+    "referencia": "kangu_X_99999999000000_112593838",
+        "servicos": [
+            "x"
+        ]
+    }
+
+/* RESPONSE:             */
+
+    {
+        "codigo": "UG XA OY XY XU",
+        "vlrFrete": 11.75,
+        "prazoEnt": 7,
+        "dtPrevEnt": "2023-07-04",
+        "tarifas": [
+            {
+                "valor": 11.75,
+                "descricao": "Frete Peso + Seguro",
+                "faixa": "Padrao"
+            }
+        ],
+        "etiquetas": [
+            {
+                "numero": "230623503134683",
+                "numeroTransp": "TH176081188BR",
+                "volume": {
+                    "peso": 1,
+                    "altura": 10,
+                    "largura": 11,
+                    "comprimento": 16,
+                    "tipo": "C",
+                    "valor": 100,
+                    "quantidade": "1",
+                    "itens": [
+                        {
+                            "produto": "1 Frasco AndCoy",
+                            "peso": "1,00",
+                            "altura": "10",
+                            "largura": "10",
+                            "comprimento": "10",
+                            "tipo": "C",
+                            "valor": "100,00",
+                            "quantidade": "1"
+                        }
+                    ]
+                }
+            }
+        ],
+        "error": {
+            "codigo": "",
+            "mensagem": ""
+        }
+    }
