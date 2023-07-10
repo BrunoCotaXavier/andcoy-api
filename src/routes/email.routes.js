@@ -10,7 +10,7 @@ const passwordconfig = process.env.EMAIL_PASSWORD
 const route = express.Router();
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.titanhosting.com',
+    host: 'SMTP.titan.email',
     port: 465,
     secure: true,
     auth: {

@@ -33,7 +33,7 @@ route.post('/recoverypassword', async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.RESET_PASSWORD_KEY, { expiresIn: '1h' });
 
     const transporter = nodemailer.createTransport({
-        host: 'andcoy.com',
+        host: 'SMTP.titan.email',
         port: 465,  
         secure: true,
         auth: {
