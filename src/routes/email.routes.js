@@ -10,9 +10,9 @@ const passwordconfig = process.env.EMAIL_PASSWORD
 const route = express.Router();
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
-    port: 587,
-    secure: false,
+    host: 'andcoy.com',
+    port: 465,
+    secure: true,
     auth: {
         user: emailconfig,
         pass: passwordconfig

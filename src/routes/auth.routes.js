@@ -33,8 +33,8 @@ route.post('/recoverypassword', async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.RESET_PASSWORD_KEY, { expiresIn: '1h' });
 
     const transporter = nodemailer.createTransport({
-        host: 'smtp.office365.com',
-        port: 587,
+        host: 'andcoy.com',
+        port: 465,  
         auth: {
             user: process.env.EMAIL_ADDRESS,
             pass: process.env.EMAIL_PASSWORD
