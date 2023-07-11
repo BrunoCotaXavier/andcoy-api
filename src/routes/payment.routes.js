@@ -1,4 +1,5 @@
-const stripe = require('stripe')('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');
+/* const stripe = require('stripe')('sk_test_51N1MMIJSdPTSZCmKlT2pytw3D9WDKhh27ujCx9Er41FwpbAArkEHl6VSRYjtrWlVOKxIVsVO1mNNsEGChCv4w1XS00XWW6mqw1'); */
+const stripe = require('stripe')('pk_live_51N1MMIJSdPTSZCmKKmNijc4zPI7sINEyEhAmifcTPvAeiLemyA5e1v8ApnC7PFdcYgKLj4rDYeYepwfbjqtZSoNu00NvtyLP28');
 const express = require('express');
 const { getProductById } = require('../service/product.service');
 const { createOrder } = require('../service/order.service');
