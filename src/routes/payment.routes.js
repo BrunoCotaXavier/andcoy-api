@@ -52,7 +52,7 @@ route.post('/create-checkout-session', cors(), async (req, res) => {
         },
     });
 
-    res.redirect(session.url);
+    res.json({ id: session.id });
 });
 
 
