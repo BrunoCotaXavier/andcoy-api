@@ -24,7 +24,7 @@ route.post('/send', /* tokenValidation, */ /* validateProduct, */ async (req, re
 
     const mailOptions = {
         from: emailconfig,
-        to: emailconfig,
+        to: req.body.email,
         subject: req.body.subject,
         text: req.body.text 
     };
